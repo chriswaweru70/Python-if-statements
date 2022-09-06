@@ -1,27 +1,27 @@
-from ast import If, Return
+from ast import If
 from xmlrpc.client import Boolean
 
+print("Please enter the color of the flower (Blue/Red): ")
+color = input() 
 
-print("Welcome to the flower shop")
+print("Please enter the size of the flower in inches: ")
+sizeString = input()
+size = float(sizeString)
 
-color = input("Enter the flower color you want: ") 
-size = float(input("Enter the size you want:"))
 
-if color == 'blue' and size<2:
-    while (isinstance(size, float)) or size <=0:
-        print("The size can't be negative, please restart:")
-        print("Start again")   
-    print('The flower is small Blue') 
-elif color == 'blue' and size>=2:
-    print("the flower is blue large")
-elif color == 'red' and size<2:
-    while (isinstance(size, float)) or size <=0:
-        ("The size can't be negative, please restart:")
-        print("Start again") 
-    print("red small")
-elif color =='red' and size>=2:
-    print("red large")
+if color == 'blue' and size < 2 and size > 0:
+    print('Blue and small') 
+elif color == 'blue' and size >= 2:
+    print("Blue and large")
+elif color == 'red' and size < 2 and size > 0:
+    print("Red and small")
+elif color =='red' and size >= 2:
+    print("Red and large")
+elif size <= 0 or '':
+   print("Error: The size must be above 0")
 elif color != 'red' or 'blue':
-    print("Invalid Color")
-else:
-    print("invalid input")
+    print("invalid color value")
+elif size >= '':
+        print("You did not input a number")
+else :
+    input("invalid input")
